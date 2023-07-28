@@ -99,7 +99,7 @@ void draw() {
 }
 
 Star createStar() {
-  float speed = random(0.2, 3); 
+  float speed = random(0.2, 20); 
   float angle = random(0, TWO_PI);
   float extentPos = random(10, 100);
   float extent = random(2, 8);
