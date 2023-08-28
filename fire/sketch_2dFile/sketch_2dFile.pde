@@ -29,8 +29,6 @@ void draw() {
 }
 
 void drawFire() {
-  fireG.beginDraw();
-  //fireG.background(0);
   if (currentStep == nbSteps) {
     currentStep = 0;
     nbSteps = (int) random(5);
@@ -53,6 +51,7 @@ void drawFire() {
     }
   }
   
+  fireG.beginDraw();
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
       fireG.stroke(palette[fire[y][x]]);
