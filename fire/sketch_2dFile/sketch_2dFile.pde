@@ -2,9 +2,10 @@ int[][] fire;
 int currentStep;
 int nbSteps;
 color[] palette;
+PGraphics fireG;
 
 void setup() {
-  size(320, 200);
+  size(320, 200, P2D);
   frameRate(60);
   
   fire = new int[height][width];
@@ -18,11 +19,18 @@ void setup() {
     color c = color((i/3), 255, Math.min(255, i*2));
     palette[i] = c;
   }
+  
+  fireG = createGraphics(320, 200, P2D);
 }
 
 void draw() {
-  background(0);
-  
+  drawFire();
+  image(fireG, 0, 0);
+}
+
+void drawFire() {
+  fireG.beginDraw();
+  //fireG.background(0);
   if (currentStep == nbSteps) {
     currentStep = 0;
     nbSteps = (int) random(5);
@@ -47,8 +55,9 @@ void draw() {
   
   for (int y = 0; y < height; y++) {
     for (int x = 0; x < width; x++) {
-      stroke(palette[fire[y][x]]);
-      point(x, y);
+      fireG.stroke(palette[fire[y][x]]);
+      fireG.point(x, y);
     }
   }
+  fireG.endDraw();
 }
