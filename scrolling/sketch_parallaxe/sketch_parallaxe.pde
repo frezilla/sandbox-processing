@@ -17,7 +17,11 @@ class Cello {
   }
   
   void update() {
-    image(this.g, 0, 0);
+    xPos = xPos - xSpeed;
+    if (xPos < -640) {
+      xPos = 0;
+    }
+    image(this.g, xPos, 0);
   }
 }
 
@@ -25,9 +29,13 @@ void setup() {
   size(640, 480, P3D);
   frameRate(60);
   cellos = new Cello[3];
-  cellos[0] = new Cello("Sky_back_layer.png", -1);
+  cellos[0] = new Cello("Sky_back_layer.png", 0.25);
+  cellos[1] = new Cello("Vegetation_middle_layer.png", 1.0);
+  cellos[2] = new Cello("Ground_front_layer.png", 5);
 }
 
 void draw() {
   cellos[0].update();
+  cellos[1].update();
+  cellos[2].update();
 }
