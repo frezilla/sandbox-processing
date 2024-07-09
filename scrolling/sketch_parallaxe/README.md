@@ -4,5 +4,4 @@ Défilement parallaxe de 6 calques.
 ![preview](preview.png?raw=true)
 
 &#128712; En savoir plus
-
-[Wikipédia](https://fr.wikipedia.org/wiki/D%C3%A9filement_parallaxe)
+- [Wikipédia](https://fr.wikipedia.org/wiki/D%C3%A9filement_parallaxe)
